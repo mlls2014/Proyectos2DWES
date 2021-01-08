@@ -1,1 +1,1 @@
-# Proyecto de ejemplos en PHP utilizados en clase
+# Proyectos Laravel utilizados en clase

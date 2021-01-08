@@ -169,3 +169,11 @@ Route::get('/redirigir', [PeliculaController::class, 'detalle']);
 
 Route::get('/formulario', [PeliculaController::class,'formulario']);
 Route::post('/recibir', [PeliculaController::class,'recibir']);
+
+// BASE DE DATOS
+
+use App\Http\Controllers\FrutaController;
+
+Route::prefix('frutas')->group(function () {
+   Route::get('/index',[FrutaController::class,'index']);
+});
