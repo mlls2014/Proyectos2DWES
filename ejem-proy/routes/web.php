@@ -175,5 +175,11 @@ Route::post('/recibir', [PeliculaController::class,'recibir']);
 use App\Http\Controllers\FrutaController;
 
 Route::prefix('frutas')->group(function () {
-   Route::get('/index',[FrutaController::class,'index']);
+   Route::get('index',[FrutaController::class,'index']);
+   Route::get('detalle/{id}', [FrutaController::class, 'detalle']);
+   Route::get('crear',[FrutaController::class,'crear']);
+   Route::post('guardar',[FrutaController::class,'guardar']);
+   Route::get('eliminar/{id}',[FrutaController::class,'eliminar']);
+   Route::get('editar/{id}',[FrutaController::class,'editar']);
+   Route::post('update',[FrutaController::class,'update']);
 });
