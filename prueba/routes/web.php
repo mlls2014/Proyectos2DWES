@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\PruebaController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PeliculaController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +18,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/prueba', function () {
-    return "hola";
-});
+Route::get('users/{id?}', [UserController::class,'show']);
+
+Route::get('prueba', PruebaController::class)->name('irfuera');
+
+Route::resource('peliculas', PeliculaController::class)->names([
+    'create' => 'creapeli'
+    ]);
